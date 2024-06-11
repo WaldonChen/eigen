@@ -194,6 +194,8 @@ set_target_properties (eigen PROPERTIES EXPORT_NAME Eigen)
 # Install Rule Configuration.
 #==============================================================================
 
+if(EIGEN_INSTALL)
+
 install(FILES
   signature_of_eigen3_matrix_library
   DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel
@@ -258,6 +260,8 @@ if(EIGEN_BUILD_CMAKE_PACKAGE)
         COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/EigenUninstall.cmake)
   endif()
 endif()
+
+endif(EIGEN_INSTALL)
 
 #==============================================================================
 # General Build Configuration.
